@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Colores principales */
+    --primary-color: #006241;     /* Verde Starbucks tradicional */
+    --secondary-color: #1e3932;   /* Verde oscuro */
+    
+    /* Colores de acento */
+    --accent-color: #d4e9e2;      /* Verde menta claro */
+    --accent-dark: #00754a;       /* Verde esmeralda */
+    
+    /* Colores neutros */
+    --white: #ffffff;
+    --black: #000000;
+    --gray-light: #f9f9f9;
+    --gray-medium: #edebe9;
+    --gray-dark: #212529;
+
+    /* Colores de estado */
+    --success: #00a862;           /* Verde éxito */
+    --warning: #cba258;           /* Dorado advertencia */
+    --error: #d62b1f;             /* Rojo error */
+
+    /* Tipografía */
+    --font-primary: 'SoDo Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    
+    /* Tamaños de fuente */
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 20px;
+    --font-size-xl: 24px;
+    
+    /* Pesos de fuente */
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 800;
+    
+    /* Espaciado entre letras */
+    --spacing-tight: -0.05em;
+    --spacing-normal: 0;
+    --spacing-wide: 0.05em;
+    --spacing-wider: 0.1em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-regular);
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-bold);
+}
+
+p {
+    font-family: var(--font-primary);
+    font-weight: var(--font-regular);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--gray-medium);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 0 10px;
+}
+
+nav ul li a {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--spacing-wider);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--black);
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover:not(.logo, .location-icon, .login, .register) {
+    color: var(--primary-color);
+}
+
+.logo {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+.logo svg {
+    transition: all 0.2s ease;
+}
+
+.logo:hover svg .logo-path {
+    fill: var(--accent-dark);
+}
+
+.circle {
+    fill: var(--white);
+}
+
+.circle:hover {
+    fill: var(--black);
+}
+
+.logo-path {
+    fill: var(--primary-color);
+    transition: fill 0.2s ease;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding-right: 40px;
+    justify-content: flex-end;
+}
+
+.location-icon {
+    font-weight: var(--font-bold);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #000;
+    text-decoration: none;
+}
+
+.location-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--black);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    letter-spacing: var(--spacing-normal);
+    border: 1px solid var(--black);
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.register{
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    text-decoration: none;
+    border: 1px solid var(--black);
+    border-radius: 20px;
+    padding: 5px 10px;
+    background: var(--black);
+}
+
+nav ul li a.logo,
+nav ul li a.location-icon,
+nav ul li a.login,
+nav ul li a.register {
+    text-transform: none;
+}

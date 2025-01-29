@@ -5,4 +5,4 @@ function updateTitle() {
                     currentPage.charAt(0).toUpperCase() + currentPage.slice(1);
     document.title = `${pageName} | Starbucks`;
 }
-window.onload = updateTitle;
+window.onload = updateTitle;º

@@ -1,17 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>World Globe 3D</title>
-  <style>
-    body { margin: 0; }
-    canvas { display: block; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks 3D Logo</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #1a1a1a; }
+        canvas { display: block; }
+    </style>
 </head>
 <body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/controls/OrbitControls.js"></script>
-  <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script>
+        // 1️⃣ Configurar escena, cámara y renderizador
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // 2️⃣ Agregar luces
+        const ambientLight = new THREE.AmbientLight(0xffffff, 2); // Luz ambiental suave
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 3); // Luz direccional
+        directionalLight.position.set(2, 3, 4);
+        scene.add(directionalLight);
+
+        // 3️⃣ Cargar modelo GLTF
+        const loader = new THREE.GLTFLoader();
+        loader.load('logo3D.gltf', (gltf) => {
+            const model = gltf.scene;
+            scene.add(model);
+
+            // 4️⃣ Asignar materiales básicos a las mallas
+            model.traverse((child) => {
+                if (child.isMesh) {
+                    let material = new THREE.MeshStandardMaterial({
+                        metalness: 0.2,
+                        roughness: 0.6
+                    });
+
+                    // Asignar colores en función de los nombres genéricos
+                    if (child.name.includes("mesh_0")) {
+                        material.color.set(0x007042); // Verde Starbucks
+                    } else if (child.name.includes("mesh_1")) {
+                        material.color.set(0xffffff); // Blanco
+                    } else if (child.name.includes("mesh_2")) {
+                        material.color.set(0xffd700); // Dorado
+                    } else if (child.name.includes("mesh_3")) {
+                        material.color.set(0x000000); // Negro
+                    } else {
+                        material.color.set(0x888888); // Gris por defecto
+                    }
+
+                    child.material = material; // Asignar material a la malla
+                }
+            });
+
+            // 5️⃣ Posicionar la cámara y animar
+            camera.position.set(0, 0, 2.5);
+            function animate() {
+                requestAnimationFrame(animate);
+                model.rotation.y += 0.01; // Rotación continua
+                renderer.render(scene, camera);
+            }
+            animate();
+        });
+
+        // 6️⃣ Redimensionar al cambiar tamaño de ventana
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
 </body>
 </html>

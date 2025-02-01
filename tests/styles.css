@@ -1,0 +1,20 @@
+/* Asegúrate de que el body tenga un fondo adecuado para resaltar el logo */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0f0f0f; /* Fondo oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Estilo para el contenedor del logo 3D */
+  #3d-container {
+    width: 80vw; /* 80% del ancho de la ventana */
+    height: 80vh; /* 80% de la altura de la ventana */
+    position: relative;
+    background-color: #fff; /* Fondo negro para resaltar el modelo */
+  }
+  

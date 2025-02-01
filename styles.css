@@ -28,8 +28,8 @@
     --font-size-xs: 12px;
     --font-size-sm: 14px;
     --font-size-md: 16px;
-    --font-size-lg: 20px;
-    --font-size-xl: 24px;
+    --font-size-lg: 28px;
+    --font-size-xl: 56px;
     
     /* Pesos de fuente */
     --font-light: 300;
@@ -84,6 +84,7 @@ button {
     -webkit-transition: all 0.2s ease-in;
     -moz-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
+    cursor: pointer;
 }
 
 button:hover {
@@ -248,3 +249,81 @@ nav ul li a.login,
 nav ul li a.register {
     text-transform: none;
 }
+
+#main-content {
+    display: flex;
+    margin-top: auto;
+    height: 100vh;
+    position: relative;
+}
+
+.right-panel {
+    display: flex;
+    width: 600px;
+    height: 625px;
+    background: var(--primary-color);
+    border-radius: 40px 0 0 40px;
+    position: absolute;
+    right: 0;
+    top: 185px;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3), 
+                -10px -10px 20px rgba(255, 255, 255, 0.2);
+    border-left: 10px solid rgba(255, 255, 255, 0.2);
+    border-top: 10px solid rgba(255, 255, 255, 0.1);
+    transform: perspective(500px);
+    transition: all 0.3s ease-in-out;
+}
+
+.coffe {
+    display: flex;
+    position: absolute;
+    margin: auto 450px;
+    top: 200px;
+    right: 0;
+}
+
+.coffe img {
+    width: 400px;
+    height: 550px;
+    object-fit: cover;
+    margin: auto 0;
+    transform: rotate(-25deg);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.coffe img:hover {
+    scale: 1.05;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 225px;
+    margin-top: 250px;
+}
+
+.welcome h1 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--spacing-wide);
+    margin-bottom: 20px;
+}
+
+.welcome h2 {
+    font-size: var(--font-size-lg);
+    color: var(--primary-color);
+}
+
+.welcome a {
+    text-decoration: none;
+    color: var(--white);
+    margin-top: 175px;
+}
+
+.welcome button {
+    padding: 20px;
+    width: 600px;
+}
+

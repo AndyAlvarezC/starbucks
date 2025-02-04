@@ -326,4 +326,199 @@ nav ul li a.register {
     padding: 20px;
     width: 600px;
 }
+/* Login */
+
+.login-container {
+    width: 600px;
+    height: 700px;
+    background: var(--black);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
+}
+
+.login-container h1 {
+    text-align: center;
+    color: var(--white);
+    padding-top: 50px;
+    margin-bottom: 60px;
+}
+
+.login-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 60%;
+}
+
+.login-inputs input {
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px 20px 10px 5px;
+    border: none;
+    background: var(--black);
+    color: var(--white);
+    border-bottom: 2px solid var(--white);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-semibold);
+    transition: all 0.2s ease-in-out;
+}
+
+.login-inputs input::placeholder {
+    font-weight: var(--font-semibold);
+    font-size: var(--font-size-md);
+}
+
+.login-inputs input:focus {
+    outline: none;
+    border-bottom: 2px solid var(--accent-dark);
+}
+
+.login-inputs button {
+    display: block;
+    width: 100%;
+    margin: 40px auto;
+    padding: 20px;
+    border: none;
+    background: var(--accent-dark);
+    color: var(--white);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.login-inputs a {
+    display: inline-block;
+    align-self: flex-start;
+    text-align: left;
+    text-decoration: none;
+    margin-top: 5px;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-semibold);
+}
+
+.login-inputs u {
+    color: var(--accent-dark);
+    transition: all 0.2s ease-in-out;
+}
+
+.login-inputs u:hover {
+    color: var(--white);
+}
+
+.login-inputs button {
+    transition: all 0.3s ease-in-out;
+}
+
+.buttons-container {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.apple-login-button,
+    .google-login-button {
+    border-radius: 7px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 11px;
+    gap: 5px;
+    width: 100%;
+}
+
+.apple-login-button,
+.google-login-button {
+    background-color: var(--black);
+    color: var(--white);
+    border: 2px solid var(--black);
+}
+
+.apple-icon,
+    .google-icon {
+    font-size: 18px;
+    margin-bottom: 1px;
+}
+
+
+/* Carta  */
+
+.menu-container{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 100px;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    margin: 100px;
+}
+
+.menu-items h2 {
+    text-align: left;
+    margin: 0;
+    letter-spacing: var(--spacing-wide);
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 20px;
+    width: 400px;
+    height: 470px;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+}
+
+.product-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.product-container:hover {
+    scale: 1.02;
+}
+
+.product-container h3{
+    margin: 15px 15px 0 15px;
+}
+
+.product-container p {
+    margin: 0 15px 15px 15px;
+}
+
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.product-container {
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: 400px;
+}
 

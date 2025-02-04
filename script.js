@@ -48,3 +48,34 @@ function handleCredentialResponse(response) {
     // Puedes mostrar el nombre o imagen en la UI
     document.body.innerHTML = `<h2>Bienvenido, ${payload.name}</h2><img src="${payload.picture}" alt="Foto de perfil">`;
 }
+
+document.getElementById('register-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevenir que el formulario se envíe sin validar
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+    const errorMessage = document.getElementById('error-message');
+
+    // Validación del correo electrónico
+    if (!validateEmail(email)) {
+        alert("Por favor, ingresa un correo válido.");
+        return; // Detener el flujo si el correo no es válido
+    }
+
+    // Verificar si las contraseñas coinciden
+    if (password !== confirmPassword) {
+        errorMessage.style.display = 'block'; // Mostrar mensaje de error
+    } else {
+        errorMessage.style.display = 'none'; // Ocultar mensaje de error si las contraseñas coinciden
+        // Aquí puedes proceder con el registro, como enviar el formulario o hacer alguna otra acción
+        alert("¡Registro exitoso!");
+    }
+});
+
+function validateEmail(email) {
+    // Validación básica para asegurarse que el correo contiene un "@"
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+

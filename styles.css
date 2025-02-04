@@ -12,7 +12,7 @@
     /* Colores neutros */
     --white: #ffffff;
     --black: #000000;
-    --gray-light: #f9f9f9;
+    --gray-light: #f1f1f1;
     --gray-medium: #edebe9;
     --gray-dark: #212529;
 
@@ -328,23 +328,37 @@ nav ul li a.register {
 }
 /* Login */
 
+#register-form {
+    width: 100%;
+    height: auto;
+}
+
+#login-form {
+    width: 100%;
+    height: auto;
+}
+
+.login-page {
+    background: var(--gray-medium);
+}
+
 .login-container {
     width: 600px;
-    height: 700px;
-    background: var(--black);
+    height: 650px;
+    background: var(--gray-light);
     position: absolute;
-    top: 50%;
+    top: 54%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
-    box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
 }
 
 .login-container h1 {
     text-align: center;
-    color: var(--white);
+    color: var(--black);
     padding-top: 50px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .login-inputs {
@@ -359,11 +373,11 @@ nav ul li a.register {
     display: block;
     width: 100%;
     margin: 20px auto;
-    padding: 20px 20px 10px 5px;
+    padding: 5px 20px 10px 5px;
     border: none;
-    background: var(--black);
-    color: var(--white);
-    border-bottom: 2px solid var(--white);
+    background:  var(--gray-light);
+    color: var(--black);
+    border-bottom: 1px solid var(--black);
     font-size: var(--font-size-md);
     font-weight: var(--font-semibold);
     transition: all 0.2s ease-in-out;
@@ -376,13 +390,13 @@ nav ul li a.register {
 
 .login-inputs input:focus {
     outline: none;
-    border-bottom: 2px solid var(--accent-dark);
+    border-bottom: 1px solid var(--accent-dark);
 }
 
 .login-inputs button {
     display: block;
     width: 100%;
-    margin: 40px auto;
+    margin: 50px auto 40px 0;
     padding: 20px;
     border: none;
     background: var(--accent-dark);
@@ -391,6 +405,11 @@ nav ul li a.register {
     font-weight: var(--font-semibold);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    outline: none;
+}
+
+.login-inputs button:hover {
+    background: var(--success);
 }
 
 .login-inputs a {
@@ -409,7 +428,7 @@ nav ul li a.register {
 }
 
 .login-inputs u:hover {
-    color: var(--white);
+    color: var(--black);
 }
 
 .login-inputs button {
@@ -422,6 +441,12 @@ nav ul li a.register {
     flex-direction: row;
     justify-content: flex-start;
     gap: 15px;
+}
+
+.login-inputs p {
+    text-align: center;
+    margin-top: 40px;
+    font-size: var(--font-size-sm);
 }
 
 .apple-login-button,
@@ -453,6 +478,13 @@ nav ul li a.register {
     .google-icon {
     font-size: 18px;
     margin-bottom: 1px;
+}
+
+#error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+    display: none;
 }
 
 
